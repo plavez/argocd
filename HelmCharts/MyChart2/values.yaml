@@ -1,6 +1,6 @@
 # Default Values for my Helm Chart
 
 container:
-  image: nginx:latest
+  image: nginx:1.27-alpine
 
 replicaCount: 1
