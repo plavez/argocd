@@ -1,5 +1,5 @@
 #ArgoCD Applications per EKS Cluster
-
+```
 │
 ├── HelmCharts             # All Helm Charts
 │   ├── ChartTest1
@@ -25,3 +25,4 @@
     │   ├── app1.yaml
     │   └── app2.yaml
     └── root.yaml              # Root ArgoCD Application    
+```
