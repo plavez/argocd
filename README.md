@@ -1,4 +1,30 @@
-# ArgoCD Applications per kind-K8S Cluster
+# Argo CD on two kind clusters (dev & prod) via Terraform
+
+This repo deploys **Argo CD** into two local **kind** Kubernetes clusters — `dev` and `prod` — using **Terraform** and the **App-of-Apps** (Root Application) pattern.
+
+One `terraform apply` spins up:
+- `argocd-dev` release in the `kind-dev` cluster (namespace `argocd-dev`)
+- `argocd-prod` release in the `kind-prod` cluster (namespace `argocd-prod`)
+- a Root `Application` in each namespace that syncs apps from a Git repo
+
+---
+
+## Requirements
+
+- Docker Desktop (WSL2 backend on Windows is fine)
+- [`kind`](https://kind.sigs.k8s.io/) ≥ 0.20  
+- `kubectl`
+- Terraform ≥ 1.5
+- (optional) `helm`, `argocd` CLI, `git`
+
+> Tip: allocate ~16–24 GB RAM to Docker/WSL for a smooth local experience.
+
+---
+
+## Repository layout
+
+
+
 ```
 │
 ├── HelmCharts             # All Helm Charts
