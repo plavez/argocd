@@ -1,4 +1,4 @@
-#ArgoCD Applications per EKS Cluster
+# ArgoCD Applications per EKS Cluster
 ```
 │
 ├── HelmCharts             # All Helm Charts
