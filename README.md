@@ -52,3 +52,13 @@ One `terraform apply` spins up:
     │   └── app2.yaml
     └── root.yaml              # Root ArgoCD Application    
 ```
+
+flowchart LR
+    dev[Developer\nPush code] --> ci[CI Pipeline\nGitHub Actions]
+    ci --> reg[Container Registry\n(GHCR/DockerHub)]
+    ci --> env[Git (env-repo)\nManifests]
+    env --> argo[Argo CD\nAuto-sync + Prune]
+    argo --> k8s[Kubernetes Cluster\nDeployments, Services, Ingress]
+
+    %% оформление (необязательно)
+    classDef box stroke:#333,stroke-width:1px,fill:#e6
