@@ -56,15 +56,14 @@ One `terraform apply` spins up:
 
 # CI/CD Flow with Argo CD
 
-Ниже показан общий поток: разработчик пушит код → CI собирает образ → обновляются манифесты в Git → Argo CD синхронизирует → Kubernetes применяет изменения.
-# CI/CD Flow with Argo CD
+Ниже показан общий поток: разработчик пушит код → CI собирает образ → обновляются манифесты в Git → Argo CD синхронизирует → Kubernetes применяет
 
 ```mermaid
 flowchart LR
-    dev[Developer Push code] --> ci[CI Pipeline GitHub Actions]
+    dev[Developer - Push code] --> ci[CI Pipeline - GitHub Actions]
     ci --> env[Git (env-repo) Deployment manifests]
-    env --> argo[Argo CD Sync + Prune]
-    argo --> k8s[Kubernetes Cluster Pods, Services, Ingress]
+    env --> argo[Argo CD - Sync and Prune]
+    argo --> k8s[Kubernetes Cluster - Pods, Services, Ingress]
 ```
 
 
