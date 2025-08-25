@@ -61,10 +61,10 @@ One `terraform apply` spins up:
 
 ```mermaid
 flowchart LR
-    dev[Developer: Push code] --> ci[CI Pipeline: GitHub Actions]
-    ci --> env[Git (env-repo): Deployment manifests]
-    env --> argo[Argo CD: Sync + Prune]
-    argo --> k8s[Kubernetes Cluster: Pods, Services, Ingress]
+    dev[Developer Push code] --> ci[CI Pipeline GitHub Actions]
+    ci --> env[Git (env-repo) Deployment manifests]
+    env --> argo[Argo CD Sync + Prune]
+    argo --> k8s[Kubernetes Cluster Pods, Services, Ingress]
 ```
 
 
