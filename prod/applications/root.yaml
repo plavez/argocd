@@ -2,13 +2,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name     : root
-  namespace: argocd
+  namespace: argocd-prod
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     name     : in-cluster
-    namespace: argocd
+    namespace: argocd-prod
   source:
     path   : "demo-prod/applications"
     repoURL: "git@github.com:plavez/argocd.git"
