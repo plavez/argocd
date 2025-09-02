@@ -1,4 +1,4 @@
-# Argo CD on two kind clusters (dev & prod) via Terraform
+# Argo CD on two kind clusters (dev & prod) via Terraform.Monitoring Prometheus - Grafana.
 
 This repo deploys **Argo CD** into two local **kind** Kubernetes clusters — `dev` and `prod` — using **Terraform** and the **App-of-Apps** (Root Application) pattern.
 
@@ -51,21 +51,4 @@ One `terraform apply` spins up:
     │   ├── app1.yaml
     │   └── app2.yaml
     └── root.yaml              # Root ArgoCD Application    
-```
-##terraform_argocd and terraform_argocd_root
-```
-├── providers.tf # aliased providers (dev/prod) pointing to kind contexts
-├── deploy_argocd.tf # module calls for dev & prod
-├── outputs.tf # aggregated outputs (chart/app versions, status)
-├── values/
-│ ├── argocd-dev.yaml # minimal Argo CD values for dev
-│ └── argocd-prod.yaml # minimal Argo CD values for prod
-├── terraform_argocd_eks/ # module: install Argo CD via Helm
-│ ├── main.tf # single helm_release "argocd"
-│ ├── variables.tf # cluster_name, chart_version, values_file
-│ └── outputs.tf # release_info
-└── terraform_argocd_root_eks/ # module: Root App (App-of-Apps)
-├── main.tf # kubernetes_manifest + templatefile → yamldecode
-├── variables.tf # cluster_name, git_source_* (repoURL, path, rev)
-└── root.yaml # Application template with substitutions
 ```
