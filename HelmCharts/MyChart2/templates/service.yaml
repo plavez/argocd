@@ -7,9 +7,9 @@ metadata:
 spec:
   selector:
     project: {{ .Release.Name }}    # Selecting PODS with those Labels
+  type: {{ .Values.service.type }} # ClusterIP, NodePort, LoadBalancer
   ports:
     - name      : {{ .Release.Name }}-listener
       protocol  : TCP
-      port      : 80  # Port on Load Balancer
-      targetPort: 80  # Port on POD
-  type: LoadBalancer
+      port      : {{.Values.service.port}}  # Port on Load Balancer
+      targetPort: {{.Values.service.targetPort}}  # Port on POD
