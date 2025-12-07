@@ -12,7 +12,7 @@ spec:
   source:
     path   : "argocd/dev/applications"
     repoURL: "https://github.com/plavez/argocd.git"
-    targetRevision: HEAD
+    targetRevision: main
   project: default
   syncPolicy:
     automated:
